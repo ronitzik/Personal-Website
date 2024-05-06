@@ -1,8 +1,8 @@
-Personal Website Repository
-Overview
+## Personal Website Repository
+# Overview
 This repository contains the source code for my personal website, designed to present my professional portfolio, educational background, and the services I offer. The site is crafted with a focus on clean design and easy navigation.
 
-File Structure
+# File Structure
 cv.css: Stylesheet for customizing the CV layout.
 logic.js: Contains the JavaScript logic for interactive elements.
 education.html: Webpage detailing my educational achievements.
