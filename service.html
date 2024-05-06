@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-54246025-1"></script> -->
+  <!-- <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-54246025-1');
+  </script> -->
+
+
+  <title>Ron Itzik</title>
+
+  <!-- Favicon -->
+  <!-- <link rel="apple-touch-icon" sizes="180x180" href="/favicons/v3/apple-touch-icon.png"> -->
+  <!-- <link rel="icon" type="image/png" sizes="32x32" href="/favicons/v3/favicon-32x32.png"> -->
+  <!-- <link rel="icon" type="image/png" sizes="16x16" href="/favicons/v3/favicon-16x16.png"> -->
+  <link rel="manifest" href="/favicons/v3/site.webmanifest">
+  <link rel="shortcut icon" type="image/x-icon" href="images-responsive/me3.png" />
+
+<meta charset="UTF-8">
+<meta name="description" content="2nd year Comuter Science student at Reichman University.">
+<meta name="keywords" content="Ron,Itzik,Ron Shalom Itzik,Student,IDC Herzliya,Reichman University">
+<meta name="author" content="Ron Itzik">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="all">
+
+  <!-- The following pattern defers CSS loading, making page load much faster -->
+  <link rel="preload" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css" as="style"
+    onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+  </noscript>
+
+  <!-- font awesome installation -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js" defer></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js" defer></script>
+
+  <link rel="stylesheet" type="text/css" href="cv.css">
+  <link rel="stylesheet" type="text/css" href="nav.css">
+
+  <!-- Use FontAwesome for (most) icons -->
+  <!-- <script src="https://kit.fontawesome.com/2a7f8c9d6d.js" defer crossorigin="anonymous"></script> -->
+
+  <!-- Use AcademicIcons for Google Scholar and Semantic Scholar icons -->
+  <!-- The following pattern defers CSS loading, making page load much faster -->
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style"
+    onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  </noscript>
+
+  <script src="logic.js" defer></script>
+  <script src="no-transition-on-resize.js" defer></script>
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Person",
+    "name": "Ron Shalom Itzik",
+    "url": "http://www.RonShalomItzik.com",
+    "sameAs": [
+      "https://www.linkedin.com/in/ron-itzik-851397228"
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <img id="me" loading=lazy alt="A photo of Mine" src="images-responsive/me2.png" sizes="100px">
+
+      
+      <a href="#">Ron Itzik</a>
+    </div>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation bar">
+    <nav>
+      <ul>
+        <li><a href="main.html" aria-label="home">Home</a></li>
+        <li><a href="main.html#about">About</a></li>
+        <li><a href="main.html#Experience">Experience</a></li>
+        <li><a href="education.html#Education">Education</a></li>
+        <li><a href="education.html#skills">Skills</a></li>
+        <li><a href="education.html#Languages">Languages</a></li>
+        <li><a href="service.html#service">Army Service</a></li>
+        <li><a href="mailto:ronitzik1104@gmail.com" aria-label="email"><i class="fa fa-paper-plane"></i></i></a></li>
+      </ul>
+    </nav>
+    <label for="nav-toggle" class="nav-toggle-label">
+      <span>
+        <i class="fa fa-bars fa-lg"></i>
+      </span>
+    </label>
+  </header>
+
+  <div id="page-wrap">
+
+    <div class="clear"></div>
+    <div class="clear"></div>
+    <div class="clear"></div>
+
+    <h2>Army Service</h2>
+    <div class="publication_text" style="padding: 1%;">
+      <b>Drated at:</b> <br>
+      <span>November 2017 - A quick track for Intelligence Officers</span> <br>
+      <b>As an Officer:</b> <br>
+      <ul>
+        <li>Performed Professional intelligence training for a year.</li>
+        <li id="showImage"> Excellent Officer - April 2021 awarded by the intelligence officer of the southern command.</li>
+        <li>Excellent Officer - April 2020 awarded by the division commanderr out of all the division’s officers.</li>
+      </ul>
+    </div>
+
+    <div class="clear"></div>
+
+    <div class="publication_text" style="padding: 1%;">
+      <b>Total Service Time</b> <br>
+      <span>Four Years (Nov 2017-Nov 2021)</span> <br>
+    </div>
+
+    <script>
+      document.getElementById("showImage").addEventListener("click", function () {
+          
+          var img = document.createElement("img");
+          img.src = "images-responsive/me4.png";
+          img.id = "popupImage"; 
+          img.style.position = "fixed"; 
+          img.style.top = "50%";
+          img.style.left = "50%";
+          img.style.transform = "translate(-50%, -50%)";
+          img.style.cursor = "pointer"; 
+          img.style.zIndex = "1000"; 
+          img.style.maxWidth = "90%"; 
+          img.style.maxHeight = "90%"; 
+          img.style.width = "auto"; 
+          img.style.height = "auto";
+
+          
+          document.body.appendChild(img);
+
+          // Add click event to the image to remove it when clicked
+          img.addEventListener("click", function () {
+            img.remove();
+          });
+        });
+
+
+    </script>
+
+  </div>
+
+  <footer>
+
+   
+    <a href="https://www.linkedin.com/in/ron-itzik-851397228" target="_blank" rel="noopener" aria-label="linkedin">
+      <i class="fa fa-linkedin fa-2x"></i>
+    </a>
+
+    <a href="mailto:ronitzik1104@gmail.com" aria-label="email">
+      <i class="fa fa-envelope fa-2x" aria-hidden="true"></i>
+    </a>
+  </footer>
+
+</body>
+
+</html>
