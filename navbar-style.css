@@ -1,0 +1,197 @@
+/* navbar adapted from https://www.youtube.com/watch?v=8QKOaTYvYUA */
+
+:root {
+    --background: rgba(255, 255, 255, 0.95);
+    --border: rgb(153, 153, 153);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+#me {
+    height: 2em;
+    position: relative;
+    top: 0.8em;
+    rotate: -4deg;
+    margin-right: 0.3em;
+    box-shadow: 0 0 0 0.7px var(--border);
+    z-index: 900;
+
+    /* jagged edge fix */
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-background-clip: content-box;
+    background-clip: content-box;
+}
+
+.logo {
+    font-size: 2em;
+    font-weight: lighter;
+}
+
+header {
+    background-color: var(--background);
+    text-align: center;
+    position: fixed;
+    z-index: 1300;
+    width: 100%;
+    border-bottom: 1px solid var(--border);
+}
+
+/* Make the checkbox invisible, as we will click on the label and not the checkbox.
+   This is better than visibility: hidden since it keeps it selectable by tabbing. */
+.nav-toggle {
+    position: absolute !important;
+    top: -9999px !important;
+    left: -9999px !important;
+}
+
+*:focus-visible {
+    outline-color: rgba(173, 216, 230, .75);
+}
+
+/* Add an outline around the burger menu when selected */
+.nav-toggle:focus~.nav-toggle-label span i {
+    outline: 2px solid rgba(173, 216, 230, .75);
+    border-radius: 1px;
+    padding: 6px 0;
+}
+
+.nav-toggle-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 1em;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+nav {
+    position: absolute;
+    text-align: left;
+    top: 100%;
+    left: 0;
+    background: var(--background);
+    width: 100%;
+    transform: scale(1, 0);
+    transform-origin: top;
+    transition: transform 400ms ease-in-out;
+    border-bottom: 1px solid var(--border);
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav li {
+    margin-bottom: min(0.5em, 0.8vh);
+    margin-left: 1em;
+}
+
+nav a {
+    color: black;
+    text-decoration: none;
+    border-bottom: none;
+    font-size: 0.8em;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: opacity 150ms ease-in-out;
+}
+
+nav a:hover {
+    border-bottom: none;
+    letter-spacing: 0.1em;
+}
+
+.logo a {
+    color: black;
+    text-decoration: none;
+    border-bottom: none;
+}
+
+.logo a:hover {
+    border-bottom: none;
+}
+
+.nav-toggle:checked~nav {
+    transform: scale(1, 1);
+}
+
+.nav-toggle:checked~nav a {
+    opacity: 1;
+    transition: opacity 250ms ease-in-out 250ms;
+}
+
+@media screen and (min-width: 1050px) {
+    .nav-toggle-label {
+        display: none;
+    }
+
+    header {
+        display: grid;
+        grid-template-columns: 1fr auto minmax(800px, 3fr) 1fr;
+    }
+
+    .logo {
+        grid-column: 2 / 3;
+    }
+
+    nav a:hover {
+        letter-spacing: unset;
+    }
+
+    nav {
+        all: unset;
+        /* this might cause issues with older Edge versions */
+
+        /* add Edge support if needed
+    position: relative;
+    text-align: left;
+    transition: none;
+    transform: scale(1,1);
+    background: none;
+    top: initial;
+    left: initial;
+    */
+
+        grid-column: 3 / 4;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    nav ul {
+        display: flex;
+    }
+
+    nav li {
+        margin-left: 2em;
+        margin-bottom: 0;
+    }
+
+    nav a {
+        opacity: 1;
+        position: relative;
+    }
+
+    nav a::before {
+        content: '';
+        display: block;
+        height: 4px;
+        background: black;
+        position: absolute;
+        top: -.75em;
+        left: 0;
+        right: 0;
+        transform: scale(0, 1);
+        transition: transform ease-in-out 250ms;
+    }
+
+    nav a:hover::before {
+        transform: scale(1, 1);
+    }
+}
